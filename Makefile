@@ -2,9 +2,10 @@ BINARY	= runasroot
 SRC	= runasroot.c
 PERM	= 4775
 OWNER	= root:root
+OPTIMIZATION_LEVEL = 5
 
 $(BINARY):
-	@gcc $(SRC) -o $(BINARY)
+	@gcc $(SRC) -O$(OPTIMIZATION_LEVEL) -o $(BINARY)
 
 .PHONY: all
 all: build
